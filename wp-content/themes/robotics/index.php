@@ -17,10 +17,10 @@
         <section class="card">
             <div class="card__background"></div>
             <h1 class='card__title'>
-                Лаборатория робототехники БрГТУ
+                <?php echo get_bloginfo( 'name' ); ?>
             </h1>
-            <div class='card__descr'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-                pretium quis, sem. Nulla consequat massa quis enim.
+            <div class='card__descr'>
+                <?php echo get_bloginfo('description'); ?>
             </div>
             <div class='card__wrapper'>
                 <div class='card__button'>

@@ -143,7 +143,7 @@ function robotics_scripts() {
 	wp_enqueue_style( 'robotics-style', get_stylesheet_uri(get_template_directory()."/style.css"), array(), "0.0.1" );
 	// wp_style_add_data( 'robotics-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'robotics-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'robotics-script', get_template_directory_uri() . '/js/script.js', array(), _S_VERSION, true );
 
 	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 	// 	wp_enqueue_script( 'comment-reply' );

@@ -22,38 +22,32 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'robotics' ); ?></a>
+<header class="header">
+    <div class="container mt-lg-3 mb-lg-3 pt-2 d-flex justify-content-between justify-content-md-start align-items-center">
+        <img onclick="location.href = 'index.php';" class="mh-100" src="img/logo.png" alt="logo" style="cursor: pointer;">
+        <ul class="header__list offset-lg-1 w-100 d-none d-md-flex justify-row align-items-center mb-0 mt-0 h-100">
+        <li><a href="about.php"> О нас </a> </li>
+            <li><a href="news.php"> Новости </a> </li>
+            <li><a href="projects.php"> Проекты </a> </li>
+            <li><a href="partners.php"> Сотрудничество </a> </li>
+            <li><a href="#"> Экскурсии </a> </li>
+            <li><a href="#"> Wiki </a> </li>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$robotics_description = get_bloginfo( 'description', 'display' );
-			if ( $robotics_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $robotics_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'robotics' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+        </ul>
+        <i id="mobile-menu-button" class="bi bi-three-dots-vertical d-md-none"></i>
+    </div>
+</header>
+<section class="mobile-menu container d-md-none">
+    <div class=" col-10 offset-10 fs-2 row justify-content-end">
+    <i id="mobile-menu-button-exit" class="bi bi-x"></i>
+    </div>
+    <div class="row">
+        <ul class="mobile-menu__list container offset-1 mt-4 ml-2 col-2">
+            <li><a href="about.php"> О нас </a> </li>
+            <li><a href="news.php"> Новости </a> </li>
+            <li><a href="projects.php"> Проекты </a> </li>
+            <li><a href="partners.php"> Сотрудничество </a> </li>
+            <li><a href="#"> Экскурсии </a> </li>
+        </ul>
+    </div>
+</section>
