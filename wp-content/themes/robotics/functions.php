@@ -140,14 +140,10 @@ add_action( 'widgets_init', 'robotics_widgets_init' );
  * Enqueue scripts and styles.
  */
 function robotics_scripts() {
+	// wp_enqueue_style('robotics-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css', array(), '5', true);
+	// wp_enqueue_style('robotics-bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css', array(), '5', true);
 	wp_enqueue_style( 'robotics-style', get_stylesheet_uri(get_template_directory()."/style.css"), array(), "0.0.1" );
-	// wp_style_add_data( 'robotics-style', 'rtl', 'replace' );
-
 	wp_enqueue_script( 'robotics-script', get_template_directory_uri() . '/js/script.js', array(), _S_VERSION, true );
-
-	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-	// 	wp_enqueue_script( 'comment-reply' );
-	// }
 }
 add_action( 'wp_enqueue_scripts', 'robotics_scripts' );
 
@@ -177,4 +173,5 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
 

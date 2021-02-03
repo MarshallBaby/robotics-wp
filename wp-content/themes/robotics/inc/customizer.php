@@ -11,26 +11,20 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function robotics_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
-	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial(
-			'blogname',
-			array(
-				'selector'        => '.site-title a',
-				'render_callback' => 'robotics_customize_partial_blogname',
-			)
-		);
-		$wp_customize->selective_refresh->add_partial(
-			'blogdescription',
-			array(
-				'selector'        => '.site-description',
-				'render_callback' => 'robotics_customize_partial_blogdescription',
-			)
-		);
-	}
+	$wp_customize->add_section('titlecard', array(
+		'title'=> 'Титульная карточка',
+		'priority'=>10
+	));
+	$wp_customize->add_setting('titlecard_background', array(
+		'default'=>'',
+		'transport'=>'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'titlecard_background', array(
+		"label"=>"Фоновое изображение",
+		"section"=>"titlecard",
+		"settings"=>'titlecard_background',
+		'descripton'=>'Фоновое изображение карточки'
+	)));
 }
 add_action( 'customize_register', 'robotics_customize_register' );
 
