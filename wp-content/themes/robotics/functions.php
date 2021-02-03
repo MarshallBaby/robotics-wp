@@ -85,6 +85,7 @@ if ( ! function_exists( 'robotics_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
+		
 
 		/**
 		 * Add support for core custom logo.
@@ -149,6 +150,13 @@ function robotics_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'robotics_scripts' );
+
+add_filter( 'excerpt_length', function(){
+	return 20;
+} );
+add_filter('excerpt_more', function($more) {
+	return '...';
+});
 
 
 /**
