@@ -9,32 +9,51 @@
 
 get_header();
 ?>
-
-	<main id="primary" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
+	<div style="height: 15px;"></div>
+    <div class='container'>
+	<?php 
+		while(have_posts()){
 			the_post();
+			if(have_posts()){
+				?>
+					
+        <section class='container article'>
+            <h2 class='article__title'>
+            <?php the_title(); ?>
+            </h2>
+            <time class='article__time' datetime="2015-05-23">23.03.15</time>
+            <p class='article__subtitle'><b>19-23 мая 2015 года в Казани (Россия) прошел чемпионат по профессиональному мастерству «WorldSkills СНГ». Наши ребята заняли второе место!</b><br><br>
+            В состав команды Беларуси от Брестского государственного технического университета входили студенты факультета электронно-информационных систем Чепелев Кирилл (АС-35-IV) и Канашук Антон (AC-33-V), которые представляли нашу страну в высокотехнологичной компетенции «Мобильная робототехника». Их выступление на чемпионате оказалось весьма успешным - ребята завоевали второе место в своей компетенции, уступив команде России. <br>
+            <img src='img/IMG_3901.jpg' alt='photo'> 
+         </p> 
+         <a class='article__back' href='index.php'>Назад</a>
+         <hr class='article__line'>
+        </section>
 
-			get_template_part( 'template-parts/content', get_post_type() );
+    
+				<?php
+			}//endif
+		}//endwhile
+	?>
+	</div>
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'robotics' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'robotics' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+<div style="height: 15px;"></div>
+    <div class='container'>
+        <section class='container article'>
+            <h2 class='article__title'>
+            Второе место на WorldSkills СНГ
+            </h2>
+            <time class='article__time' datetime="2015-05-23">23.03.15</time>
+            <p class='article__subtitle'><b>19-23 мая 2015 года в Казани (Россия) прошел чемпионат по профессиональному мастерству «WorldSkills СНГ». Наши ребята заняли второе место!</b><br><br>
+            В состав команды Беларуси от Брестского государственного технического университета входили студенты факультета электронно-информационных систем Чепелев Кирилл (АС-35-IV) и Канашук Антон (AC-33-V), которые представляли нашу страну в высокотехнологичной компетенции «Мобильная робототехника». Их выступление на чемпионате оказалось весьма успешным - ребята завоевали второе место в своей компетенции, уступив команде России. <br>
+            <img src='img/IMG_3901.jpg' alt='photo'> 
+         </p> 
+         <a class='article__back' href='index.php'>Назад</a>
+         <hr class='article__line'>
+        </section>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
+    </div>
 
 <?php
-get_sidebar();
+
 get_footer();

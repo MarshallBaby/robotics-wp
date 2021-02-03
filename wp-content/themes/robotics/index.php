@@ -38,43 +38,31 @@
             </div>
             <div class='container d-flex flex-column align-items-center'>
                 <div class="row equal">
-                    <div class="news__card col-xs-12 col-sm-6 col-lg-4">
+                <!-- pizza -->
+                <?php 
+                    query_posts('cat=newscat&posts_per_page=4');
+                    if(have_posts()){
+                        while(have_posts()){
+                            the_post();
+                            ?> 
+                            <div class="news__card col-xs-12 col-sm-6 col-lg-4">
                         <div class='news__sticker'>
-                            <div class="news__thumb" style="background-image: url(img/news/1.jpg);"></div>
+                            <div onclick="location.href = '<?php the_permalink(); ?>';" class="news__thumb" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"> </div>
                             <div class='news__help-container'>
-                                <h3 class='news__subtitle'>Второе место на WorldSkills СНГ</h3>
-                                <div class='news__descr'>19-23 мая 2015 года в Казани (Россия) прошел чемпионат по профессиональному мастерству «WorldSkills СНГ». Наши ребята заняли второе место!</div>
+                                <h3 class='news__subtitle'> <?php the_title(); ?> </h3>
+                                <div class='news__descr'> <?php the_excerpt(); ?> </div>
                                 <div class='news__more'>
-                                    <a href="single.php">Подробнее</a>
+                                    <a href="<?php the_permalink(); ?>">Подробнее</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="news__card col-xs-12 col-sm-6 col-lg-4">
-                        <div class='news__sticker'>
-                            <div class="news__thumb" style="background-image: url(img/news/2.jpg);"></div>
-                            <div class='news__help-container'>
-                                <h3 class='news__subtitle'>Чемпионы WorldSkills 2014</h3>
-                                <div class='news__descr'>19-23 мая 2015 года в Казани (Россия) прошел чемпионат по профессиональному мастерству «WorldSkills СНГ». Наши ребята заняли второе место!</div>
-                                <div class='news__more'>
-                                    <a href="#">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news__card col-xs-12 col-sm-6 col-lg-4">
-                        <div class='news__sticker'>
-                            <div class="news__thumb" style="background-image: url(img/news/3.jpg);"></div>
-                            <div class='news__help-container'>
-                                <h3 class='news__subtitle'>Arduino Day 2014</h3>
-                                <div class='news__descr'>19-23 мая 2015 года в Казани (Россия) прошел чемпионат по профессиональному мастерству «WorldSkills СНГ». Наши ребята заняли второе место!</div>
-                                <div class='news__more'>
-                                    <a href="#">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news__card d-none d-sm-flex d-lg-none col-xs-12 col-sm-6 col-lg-4">
+                            
+                            <?php
+                        }
+                    }//endif
+                ?>
+                    <!-- <div class="news__card d-none d-sm-flex d-lg-none col-xs-12 col-sm-6 col-lg-4">
                         <div class='news__sticker'>
                             <div class="news__thumb" style="background-image: url(img/news/1.jpg);"></div>
                             <div class='news__help-container'>
@@ -85,7 +73,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+
+                    <script>
+                        document.getElementsByClassName("news__card")[3].classList.add('d-none');
+                        document.getElementsByClassName("news__card")[3].classList.add('d-sm-flex');
+                        document.getElementsByClassName("news__card")[3].classList.add('d-lg-none');
+                    </script>
 
                 </div>
                 <div class='news__all-news'>

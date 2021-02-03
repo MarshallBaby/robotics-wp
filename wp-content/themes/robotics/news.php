@@ -2,9 +2,7 @@
 /*
 Template Name: news
 */
-
 get_header();
-
 ?>
 
 <section class='news'>
@@ -38,7 +36,7 @@ get_header();
                 ?>
                     
                 </div>
-                <a class='article__back align-self-start' href='index.php'>Назад</a>
+                <a class='article__back align-self-start' href="<?php echo home_url(); ?>">Назад</a>
             </div>
             
         </section>

@@ -73,6 +73,8 @@ function ready() {
         links[i].innerHTML = links[i].getAttribute('data-title');
     }
 
+    
+
 }
 
 document.addEventListener("DOMContentLoaded", ready);

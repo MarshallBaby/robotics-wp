@@ -31,7 +31,7 @@
 <?php wp_body_open(); ?>
 <header class="header">
     <div class="container mt-lg-3 mb-lg-3 pt-2 d-flex justify-content-between justify-content-md-start align-items-center">
-        <img onclick="location.href = 'index.php';" class="mh-100" src="img/logo.png" alt="logo" style="cursor: pointer;">
+        <img onclick="location.href = '<?php echo home_url(); ?>';" class="mh-100" src="img/logo.png" alt="logo" style="cursor: pointer;">
         <ul class="header__list offset-lg-1 w-100 d-none d-md-flex justify-row align-items-center mb-0 mt-0 h-100">
         <li><a href="about.php"> О нас </a> </li>
             <li><a href="news.php"> Новости </a> </li>
