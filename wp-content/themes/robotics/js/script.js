@@ -41,6 +41,7 @@ function mobileMenuSwitcher() {
 }
 
 function ready() {
+    console.log("Load");
     let initWidth = screen.width;
     if ($("body").height() < $(window).height()) {
         $("body").css('min-heigth', '100vh');

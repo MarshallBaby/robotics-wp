@@ -143,9 +143,13 @@ function robotics_scripts() {
 	// wp_enqueue_style('robotics-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css', array(), '5', true);
 	// wp_enqueue_style('robotics-bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css', array(), '5', true);
 	wp_enqueue_style( 'robotics-style', get_stylesheet_uri(get_template_directory()."/style.css"), array(), "0.0.1" );
-	wp_enqueue_script( 'robotics-script', get_template_directory_uri() . '/js/script.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'robotics-script', get_template_directory_uri() . '/js/script.js', array(), false, true);
+	wp_deregister_script('jquery');
+	wp_register_script( 'jquery', 'https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js', array(), "1.12.4", false);
+
 }
 add_action( 'wp_enqueue_scripts', 'robotics_scripts' );
+
 
 /**
  * Implement the Custom Header feature.

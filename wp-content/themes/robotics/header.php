@@ -23,6 +23,7 @@
             background-image:url('<?php echo esc_url( get_theme_mod( 'titlecard_background' ) ); ?>');
         }
     </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 	<?php wp_head(); ?>
 </head>
 

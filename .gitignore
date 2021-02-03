@@ -1,0 +1,4 @@
+*
+!/wp-content/themes/robotics
+!/wp-content/uploads
+!.gitignore
