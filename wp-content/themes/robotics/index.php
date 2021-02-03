@@ -89,7 +89,7 @@
 
                 </div>
                 <div class='news__all-news'>
-                    <a href="news.php">все новости</a>
+                    <a href="news">все новости</a>
                 </div>
             </div>
         </section>
