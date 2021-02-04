@@ -12,6 +12,11 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+function my_page_title() {
+    return get_bloginfo('name'); // add dynamic content to this title (if needed)
+}
+add_action( 'pre_get_document_title', 'my_page_title' );
+
 if ( ! function_exists( 'robotics_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

@@ -71,7 +71,7 @@
                     </script>
 
                 </div>
-                <div class='news__all-news'>
+                <div onclick="location.href = 'news';" class='news__all-news'>
                     <a href="news">все новости</a>
                 </div>
             </div>
@@ -122,45 +122,37 @@
         <section class='partners'>
             <div class='container'>
                 <h2 class='partners__title'>Наши партнеры</h2>
-                <div class='partners__descr'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-
+                <div class='partners__descr'>
+                    <?php echo get_theme_mod('parnters_descr'); ?>
                 </div>
-                <a class='partners__link' href='#'>Как стать партнером</a>
+                <a class='partners__link' href='<?php echo get_theme_mod('parnters_howto_link'); ?>'>Как стать партнером</a>
                 <div class='partners__wrapper'>
                     <div class='row '>
-                        <div class='justify-content-center d-flex flex-wrap col-sm-12 col-md-6 col-lg-4'>
-                            <div class='partners__item'>
-                                <div class='partners__logo'>
-                                    <img src="img/patners/logo-savushkin-produkt.png" alt="partners">
-                                </div>
-                                <div class='partners__company'>
-                                    ООО Системы промышленной автоматизации
-                                </div>
-                            </div>
-                        </div>
-                        <div class='justify-content-center d-flex flex-wrap col-sm-12 col-md-6 col-lg-4'>
-                            <div class='partners__item'>
-                                <div class='partners__logo'>
-                                    <img src="img/patners/logo-savushkin-produkt.png" alt="partners">
-                                </div>
-                                <div class='partners__company'>
-                                    ООО Системы промышленной автоматизации
+                        <?php $posts = get_posts(array(
+                            "category_name" => "partners_index",
+                            "numberposts" => 3,
+                        ));
+
+                        foreach ($posts as $post) {
+                        ?>
+                            <div onclick="location.href = '<?php echo the_excerpt(); ?>';" class='justify-content-center d-flex flex-wrap col-sm-12 col-md-6 col-lg-4'>
+                                <div class='partners__item'>
+                                    <div class='partners__logo'>
+                                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="partners">
+                                    </div>
+                                    <div class='partners__company'>
+                                        <?php the_title(); ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class='justify-content-center d-flex flex-wrap col-sm-12 col-md-6 col-lg-4'>
-                            <div class='partners__item'>
-                                <div class='partners__logo'>
-                                    <img src="img/patners/logo-savushkin-produkt.png" alt="partners">
-                                </div>
-                                <div class='partners__company'>
-                                    ООО Системы промышленной автоматизации
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
+
+
                     </div>
                     <div class='partners__full-list'>
-                        <a href="partners.php">полный список</a>
+                        <a href="partners">полный список</a>
                     </div>
                     <hr class='partners__line'>
                 </div>
