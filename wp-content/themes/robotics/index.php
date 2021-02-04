@@ -6,7 +6,7 @@
             <div class="card__background">
             </div>
             <h1 class='card__title'>
-                <?php echo get_bloginfo( 'name' ); ?>
+                <?php echo get_bloginfo('name'); ?>
             </h1>
             <div class='card__descr'>
                 <?php echo get_bloginfo('description'); ?>
@@ -38,30 +38,32 @@
             </div>
             <div class='container d-flex flex-column align-items-center'>
                 <div class="row equal">
-                <!-- pizza -->
-                <?php 
-                    query_posts('cat=newscat&posts_per_page=4');
-                    if(have_posts()){
-                        while(have_posts()){
-                            the_post();
-                            ?> 
-                            <div class="news__card col-xs-12 col-sm-6 col-lg-4">
-                        <div class='news__sticker'>
-                            <div onclick="location.href = '<?php the_permalink(); ?>';" class="news__thumb" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"> </div>
-                            <div class='news__help-container'>
-                                <h3 class='news__subtitle'> <?php the_title(); ?> </h3>
-                                <div class='news__descr'> <?php the_excerpt(); ?> </div>
-                                <div class='news__more'>
-                                    <a href="<?php the_permalink(); ?>">Подробнее</a>
+                    <!-- pizza -->
+                    <?php
+                    $posts = get_posts(array(
+                        "category_name" => "newscat",
+                        "numberposts" => 4
+                    ));
+                    foreach ($posts as $post) {
+                    ?>
+                        <div class="news__card col-xs-12 col-sm-6 col-lg-4">
+                            <div class='news__sticker'>
+                                <div onclick="location.href = '<?php the_permalink(); ?>';" class="news__thumb" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"> </div>
+                                <div class='news__help-container'>
+                                    <h3 class='news__subtitle'> <?php the_title(); ?> </h3>
+                                    <div class='news__descr'> <?php the_excerpt(); ?> </div>
+                                    <div class='news__more'>
+                                        <a href="<?php the_permalink(); ?>">Подробнее</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                            
-                            <?php
-                        }
-                    }//endif
-                ?>
+                    <?php
+                    }
+                    ?>
+
+
+
                     <script>
                         document.getElementsByClassName("news__card")[3].classList.add('d-none');
                         document.getElementsByClassName("news__card")[3].classList.add('d-sm-flex');
@@ -77,81 +79,90 @@
 
         <section class="projects">
             <div class="container d-flex flex-column">
-                <h2 class ='projects__title'>Проекты</h2>
+                <h2 class='projects__title'>Проекты</h2>
                 <div class='projects__descr'>
                     <?php echo get_theme_mod('projects_descr'); ?>
                 </div>
-                
+
                 <div class="projects__wrapper align-self-center">
-                    <?php 
-                        query_posts('cat=projects_index&posts_per_page=7');
-                        while(have_posts()){
-                            if(have_posts()){
-                                the_post();
-                                ?>
-                    <div onclick="location.href = '<?php the_permalink(); ?>';" class='projects__item d-none d-lg-flex' style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
-                        <div class="projects__dark"></div>
-                        <div class='projects__name'> <?php the_title() ?> </div>        
-                    </div>
-                                <?php
-                            }//endif
-                        }//endwhile
+                    <?php
+                    $posts = get_posts(array(
+                        "category_name" => "projects_index",
+                        "numberposts" => 7
+                    ));
+                    foreach ($posts as $post) {
                     ?>
-                    <div onclick="location.href = 'projects';" class='projects__item' style="background-image:url('<?php echo esc_url( get_theme_mod( 'projects_more_background' ) ); ?>');">
+                        <div onclick="location.href = '<?php the_permalink(); ?>';" class='projects__item' style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
+                            <div class="projects__dark"></div>
+                            <div class='projects__name'> <?php the_title() ?> </div>
+                        </div>
+
+                    <?php
+                    }
+                    ?>
+
+
+                    <script>
+                        document.getElementsByClassName("projects__item")[5].classList.add('d-none');
+                        document.getElementsByClassName("projects__item")[5].classList.add('d-lg-flex');
+                        document.getElementsByClassName("projects__item")[6].classList.add('d-none');
+                        document.getElementsByClassName("projects__item")[6].classList.add('d-lg-flex');
+                    </script>
+                    <div onclick="location.href = 'projects';" class='projects__item' style="background-image:url('<?php echo esc_url(get_theme_mod('projects_more_background')); ?>');">
                         <div class="projects__dark"></div>
                         <div class='projects__name'>Все проекты</div>
-                    
+
                     </div>
                 </div>
-               
-                
+
+
             </div>
         </section>
 
         <section class='partners'>
             <div class='container'>
-                <h2 class ='partners__title'>Наши партнеры</h2>
+                <h2 class='partners__title'>Наши партнеры</h2>
                 <div class='partners__descr'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                
+
                 </div>
                 <a class='partners__link' href='#'>Как стать партнером</a>
                 <div class='partners__wrapper'>
-                <div class='row '>
-                    <div class='justify-content-center d-flex flex-wrap col-sm-12 col-md-6 col-lg-4'>
-                        <div class='partners__item'>
-                           <div class='partners__logo'>
-                                <img src="img/patners/logo-savushkin-produkt.png" alt="partners">
-                           </div>
-                           <div class='partners__company'>
-                           ООО Системы промышленной автоматизации
-                           </div>
+                    <div class='row '>
+                        <div class='justify-content-center d-flex flex-wrap col-sm-12 col-md-6 col-lg-4'>
+                            <div class='partners__item'>
+                                <div class='partners__logo'>
+                                    <img src="img/patners/logo-savushkin-produkt.png" alt="partners">
+                                </div>
+                                <div class='partners__company'>
+                                    ООО Системы промышленной автоматизации
+                                </div>
+                            </div>
+                        </div>
+                        <div class='justify-content-center d-flex flex-wrap col-sm-12 col-md-6 col-lg-4'>
+                            <div class='partners__item'>
+                                <div class='partners__logo'>
+                                    <img src="img/patners/logo-savushkin-produkt.png" alt="partners">
+                                </div>
+                                <div class='partners__company'>
+                                    ООО Системы промышленной автоматизации
+                                </div>
+                            </div>
+                        </div>
+                        <div class='justify-content-center d-flex flex-wrap col-sm-12 col-md-6 col-lg-4'>
+                            <div class='partners__item'>
+                                <div class='partners__logo'>
+                                    <img src="img/patners/logo-savushkin-produkt.png" alt="partners">
+                                </div>
+                                <div class='partners__company'>
+                                    ООО Системы промышленной автоматизации
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class='justify-content-center d-flex flex-wrap col-sm-12 col-md-6 col-lg-4'>
-                        <div class='partners__item'>
-                           <div class='partners__logo'>
-                                <img src="img/patners/logo-savushkin-produkt.png" alt="partners">
-                           </div>
-                           <div class='partners__company'>
-                           ООО Системы промышленной автоматизации
-                           </div>
-                        </div>
+                    <div class='partners__full-list'>
+                        <a href="partners.php">полный список</a>
                     </div>
-                    <div class='justify-content-center d-flex flex-wrap col-sm-12 col-md-6 col-lg-4'>
-                        <div class='partners__item'>
-                           <div class='partners__logo'>
-                                <img src="img/patners/logo-savushkin-produkt.png" alt="partners">
-                           </div>
-                           <div class='partners__company'>
-                           ООО Системы промышленной автоматизации
-                           </div>
-                        </div>
-                    </div>
-                </div>
-                <div class='partners__full-list'>
-                    <a href="partners.php">полный список</a>
-                </div>
-                <hr class='partners__line'>
+                    <hr class='partners__line'>
                 </div>
             </div>
         </section>
@@ -161,26 +172,26 @@
             </div>
             <div class='row justify-content-around'>
                 <div class=' flex-wrap d-flex justify-content-center col-sm-12 col-md-4 col-lg-4'>
-                    
+
                     <div class='excursion__item' style="background-image: url(img/excursion/1.jpg);"> <span>Онлайн-экскурсия </span>
-                    <div class="excursion__dark"></div>
+                        <div class="excursion__dark"></div>
                     </div>
                 </div>
                 <div class=' flex-wrap d-flex justify-content-center col-sm-12 col-md-4 col-lg-4'>
-                    
+
                     <div class='excursion__item' style="background-image: url(img/excursion/2.jpg);"> <span>Оффлайн-экскурсия </span>
-                    <div class="excursion__dark"></div>
+                        <div class="excursion__dark"></div>
                     </div>
                 </div>
                 <div class=' flex-wrap d-flex justify-content-center col-sm-12 col-md-4 col-lg-4'>
-                    
+
                     <div class='excursion__item' style="background-image: url(img/excursion/3.jpg);"> <span>Виртуальная-экскурсия </span>
-                    <div class="excursion__dark"></div>
+                        <div class="excursion__dark"></div>
                     </div>
                 </div>
             </div>
             <hr class='excursion__line'>
-            
+
         </section>
         <section class='links mb-5'>
             <div class='container'>
@@ -221,4 +232,4 @@
             </div>
         </section>
     </div>
-   <?php get_footer(); ?>
+    <?php get_footer(); ?>
