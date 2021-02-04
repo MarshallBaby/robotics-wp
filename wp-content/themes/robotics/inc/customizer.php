@@ -25,6 +25,44 @@ function robotics_customize_register( $wp_customize ) {
 		"settings"=>'titlecard_background',
 		'descripton'=>'Фоновое изображение карточки'
 	)));
+
+	$wp_customize->add_setting('card_button_text', array(
+		'default'=>'Наша деятельность',
+		'transport'=>'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'card_button_text', array(
+		"label"=>"Текст кнопки",
+		"section"=>"titlecard",
+		"settings"=>'card_button_text',
+		"type"=>'text',
+	)));
+
+	$wp_customize->add_section('projects', array(
+		'title'=> 'Проекты (титульник)',
+		'priority'=>11
+	));
+
+	$wp_customize->add_setting('projects_descr', array(
+		'default'=>'',
+		'transport'=>'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'projects_descr', array(
+		"label"=>"Проекты подзаголовок",
+		"section"=>"projects",
+		"settings"=>'projects_descr',
+		"type"=>'textarea',
+	)));
+
+	$wp_customize->add_setting('projects_more_background', array(
+		'default'=>'',
+		'transport'=>'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'projects_more_background', array(
+		"label"=>"Все проекты фон",
+		"section"=>"projects",
+		"settings"=>'projects_more_background',
+		'descripton'=>'Фоновое изображение'
+	)));
 }
 add_action( 'customize_register', 'robotics_customize_register' );
 

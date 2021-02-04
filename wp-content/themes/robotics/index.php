@@ -13,7 +13,7 @@
             </div>
             <div class='card__wrapper'>
                 <div class='card__button'>
-                    Наша деятельность
+                    <?php echo get_theme_mod('card_button_text'); ?>
                 </div>
                 <a class='card__history card__history_hidden'>
                     История <i class="bi bi-chevron-right"></i>
@@ -62,19 +62,6 @@
                         }
                     }//endif
                 ?>
-                    <!-- <div class="news__card d-none d-sm-flex d-lg-none col-xs-12 col-sm-6 col-lg-4">
-                        <div class='news__sticker'>
-                            <div class="news__thumb" style="background-image: url(img/news/1.jpg);"></div>
-                            <div class='news__help-container'>
-                                <h3 class='news__subtitle'>Arduino Day 2014</h3>
-                                <div class='news__descr'>19-23 мая 2015 года в Казани (Россия) прошел чемпионат по профессиональному мастерству «WorldSkills СНГ». Наши ребята заняли второе место!</div>
-                                <div class='news__more'>
-                                    <a href="#">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
                     <script>
                         document.getElementsByClassName("news__card")[3].classList.add('d-none');
                         document.getElementsByClassName("news__card")[3].classList.add('d-sm-flex');
@@ -91,46 +78,26 @@
         <section class="projects">
             <div class="container d-flex flex-column">
                 <h2 class ='projects__title'>Проекты</h2>
-                <div class='projects__descr'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                
+                <div class='projects__descr'>
+                    <?php echo get_theme_mod('projects_descr'); ?>
                 </div>
                 
                 <div class="projects__wrapper align-self-center">
-                    <div class='projects__item' style="background-image:url(img/projects/IMG_3959.jpg)">
+                    <?php 
+                        query_posts('cat=projects_index&posts_per_page=7');
+                        while(have_posts()){
+                            if(have_posts()){
+                                the_post();
+                                ?>
+                    <div onclick="location.href = '<?php the_permalink(); ?>';" class='projects__item d-none d-lg-flex' style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
                         <div class="projects__dark"></div>
-                    <div class='projects__name'>Проектирование робототехнических комплексов</div>
+                        <div class='projects__name'> <?php the_title() ?> </div>        
                     </div>
-                    <div class='projects__item' style="background-image:url(img/projects/IMG_3967.jpg)">
-                        <div class="projects__dark"></div>
-                        <div class='projects__name'>Цифровое моделирование</div>
-                    
-                    </div>
-                    <div class='projects__item' style="background-image:url(img/projects/IMG_3975.jpg)">
-                        <div class="projects__dark"></div>
-                        <div class='projects__name'>Промышленная маркировка товаров</div>
-                    
-                    </div>
-                    <div class='projects__item' style="background-image:url(img/projects/IMG_3977.jpg)">
-                        <div class="projects__dark"></div>
-                        <div class='projects__name'>Разработка систем технического зрения</div>
-                    
-                    </div>
-                    <div class='projects__item' style="background-image:url(img/projects/IMG_3979.jpg)">
-                        <div class="projects__dark"></div>
-                        <div class='projects__name'>Промышленная маркировка товаров</div>
-                    
-                    </div>
-                    <div class='projects__item d-none d-lg-flex' style="background-image:url(img/projects/IMG_3988-Pano.jpg)">
-                        <div class="projects__dark"></div>
-                        <div class='projects__name'>Аддитивные технологии</div>
-                    
-                    </div>
-                    <div class='projects__item d-none d-lg-flex' style="background-image:url(img/projects/IMG_4015.jpg)">
-                        <div class="projects__dark"></div>
-                        <div class='projects__name'>Обучение и переподготовка</div>
-                    
-                    </div>
-                    <div onclick="location.href = 'projects.php';" class='projects__item' style="background-image:url(img/projects/IMG_4032.jpg)">
+                                <?php
+                            }//endif
+                        }//endwhile
+                    ?>
+                    <div onclick="location.href = 'projects';" class='projects__item' style="background-image:url('<?php echo esc_url( get_theme_mod( 'projects_more_background' ) ); ?>');">
                         <div class="projects__dark"></div>
                         <div class='projects__name'>Все проекты</div>
                     

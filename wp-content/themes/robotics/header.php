@@ -32,15 +32,12 @@
 <header class="header">
     <div class="container mt-lg-3 mb-lg-3 pt-2 d-flex justify-content-between justify-content-md-start align-items-center">
         <img onclick="location.href = '<?php echo home_url(); ?>';" class="mh-100" src="img/logo.png" alt="logo" style="cursor: pointer;">
-        <ul class="header__list offset-lg-1 w-100 d-none d-md-flex justify-row align-items-center mb-0 mt-0 h-100">
-        <li><a href="about.php"> О нас </a> </li>
-            <li><a href="news.php"> Новости </a> </li>
-            <li><a href="projects.php"> Проекты </a> </li>
-            <li><a href="partners.php"> Сотрудничество </a> </li>
-            <li><a href="#"> Экскурсии </a> </li>
-            <li><a href="#"> Wiki </a> </li>
-
-        </ul>
+        <?php wp_nav_menu(array(
+            'theme_location'=> 'header-menu',
+            'container'=>'false',
+            'menu_class'=>'header__list offset-lg-1 w-100 d-none d-md-flex justify-row align-items-center mb-0 mt-0 h-100',
+            
+        )); ?>
         <i id="mobile-menu-button" class="bi bi-three-dots-vertical d-md-none"></i>
     </div>
 </header>
@@ -49,12 +46,11 @@
     <i id="mobile-menu-button-exit" class="bi bi-x"></i>
     </div>
     <div class="row">
-        <ul class="mobile-menu__list container offset-1 mt-4 ml-2 col-2">
-            <li><a href="about.php"> О нас </a> </li>
-            <li><a href="news.php"> Новости </a> </li>
-            <li><a href="projects.php"> Проекты </a> </li>
-            <li><a href="partners.php"> Сотрудничество </a> </li>
-            <li><a href="#"> Экскурсии </a> </li>
-        </ul>
+    <?php wp_nav_menu(array(
+            'theme_location'=> 'header-menu',
+            'container'=>'false',
+            'menu_class'=>'mobile-menu__list container offset-1 mt-4 ml-2 col-2',
+            
+        )); ?>
     </div>
 </section>
