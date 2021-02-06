@@ -21,10 +21,10 @@
             </div>
 
             <div class="card__media">
-                <i class="bi bi-facebook"></i>
-                <i class="bi bi-instagram"></i>
-                <i class="bi bi-telegram"></i>
-                <i class="bi bi-youtube"></i>
+                <i onclick="location.href = '<?php echo get_theme_mod( 'card_facebook_url' ) ?>';" class="bi bi-facebook"></i>
+                <i onclick="location.href = '<?php echo get_theme_mod( 'card_instagram_url' ) ?>';" class="bi bi-instagram"></i>
+                <i onclick="location.href = '<?php echo get_theme_mod( 'card_telegram_url' ) ?>';" class="bi bi-telegram"></i>
+                <i onclick="location.href = '<?php echo get_theme_mod( 'card_youtube_url' ) ?>';" class="bi bi-youtube"></i>
             </div>
             <div class='aboba'>
                 <a class='card__history'>
@@ -189,6 +189,14 @@
             <div class='container'>
                 <h2 class="links__title">Полезные ссылки</h2>
                 <div class="container">
+
+                <?php wp_nav_menu(array(
+            'theme_location'=> 'links-menu',
+            'container'=>'false',
+            'menu_class'=>'',
+            
+        )); ?>
+
                     <div class='row'>
                         <div class='col-sm-12 col-lg-4 col-xl-4 col-xxl-3'>
                             <div class='links__wrapper'>

@@ -27,7 +27,52 @@ function robotics_customize_register($wp_customize)
 		"settings" => 'titlecard_background',
 		'descripton' => 'Фоновое изображение карточки'
 	)));
+	
+	$wp_customize->add_setting('card_telegram_url', array(
+		'default' => '#',
+		'transport' => 'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'card_telegram_url', array(
+		"label" => "Telegram URL",
+		"section" => "titlecard",
+		"settings" => 'card_telegram_url',
+		"type"=>"text"
+	)));
 
+	$wp_customize->add_setting('card_facebook_url', array(
+		'default' => '#',
+		'transport' => 'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'card_facebook_url', array(
+		"label" => "Facebook URL",
+		"section" => "titlecard",
+		"settings" => 'card_facebook_url',
+		"type"=>"text"
+	)));
+
+	$wp_customize->add_setting('card_youtube_url', array(
+		'default' => '#',
+		'transport' => 'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'card_youtube_url', array(
+		"label" => "Youtube URL",
+		"section" => "titlecard",
+		"settings" => 'card_youtube_url',
+		"type"=>"text"
+	)));
+
+	$wp_customize->add_setting('card_instagram_url', array(
+		'default' => '#',
+		'transport' => 'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'card_instagram_url', array(
+		"label" => "Instagram URL",
+		"section" => "titlecard",
+		"settings" => 'card_instagram_url',
+		"type"=>"text"
+	)));
+	
+	
 	$wp_customize->add_setting('card_button_text', array(
 		'default' => 'Наша деятельность',
 		'transport' => 'postMessage'
@@ -90,6 +135,20 @@ function robotics_customize_register($wp_customize)
 		"section" => "partners",
 		"settings" => 'parnters_descr',
 		"type"=>"textarea"
+	)));
+	$wp_customize->add_section('customlogo', array(
+		'title' => 'Логотип',
+		'priority' => 9
+	));
+	$wp_customize->add_setting('customlogo_url', array(
+		'default' => '',
+		'transport' => 'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'customlogo_url', array(
+		"label" => "Логотип",
+		"section" => "customlogo",
+		"settings" => 'customlogo_url',
+		
 	)));
 }
 add_action('customize_register', 'robotics_customize_register');

@@ -31,7 +31,9 @@
 <?php wp_body_open(); ?>
 <header class="header">
     <div class="container mt-lg-3 mb-lg-3 pt-2 d-flex justify-content-between justify-content-md-start align-items-center">
-        <img onclick="location.href = '<?php echo home_url(); ?>';" class="mh-100" src="img/logo.png" alt="logo" style="cursor: pointer;">
+        <img onclick="location.href = '<?php echo home_url(); ?>';" class="mh-100" src="<?php echo get_theme_mod( 'customlogo_url' ) ?>" alt="logo" style="cursor: pointer;">
+        
+        
         <?php wp_nav_menu(array(
             'theme_location'=> 'header-menu',
             'container'=>'false',

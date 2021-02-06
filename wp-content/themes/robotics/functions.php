@@ -56,6 +56,8 @@ if ( ! function_exists( 'robotics_setup' ) ) :
 		register_nav_menus(
 			array(
 				'header-menu' => esc_html__( 'Header', 'robotics' ),
+				'links-menu' => esc_html__( 'Links', 'robotics' ),
+
 			)
 		);
 

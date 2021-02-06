@@ -21,7 +21,7 @@ get_header();
             <h2 class='article__title'>
             <?php the_title(); ?>
             </h2>
-            <time class='article__time' datetime="2015-05-23">23.03.15</time>
+            <time class='article__time' datetime="<?php echo get_the_date('Y-m-d') ?>"> <?php echo get_the_date('d.m.Y'); ?> </time>
 				<?php the_content(); ?>
          <a class='article__back' href='index.php'>Назад</a>
          <hr class='article__line'>
