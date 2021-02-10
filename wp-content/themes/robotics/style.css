@@ -388,7 +388,8 @@ body {
 .links__item {
     cursor: pointer;
     user-select: none;
-    display: flex;
+    /* display: flex; */
+    display: none;
     align-items: center;
     padding-left: 16px;
     max-width: 275px;

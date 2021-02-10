@@ -21,10 +21,10 @@
             </div>
 
             <div class="card__media">
-                <i onclick="location.href = '<?php echo get_theme_mod( 'card_facebook_url' ) ?>';" class="bi bi-facebook"></i>
-                <i onclick="location.href = '<?php echo get_theme_mod( 'card_instagram_url' ) ?>';" class="bi bi-instagram"></i>
-                <i onclick="location.href = '<?php echo get_theme_mod( 'card_telegram_url' ) ?>';" class="bi bi-telegram"></i>
-                <i onclick="location.href = '<?php echo get_theme_mod( 'card_youtube_url' ) ?>';" class="bi bi-youtube"></i>
+                <i onclick="location.href = '<?php echo get_theme_mod('card_facebook_url') ?>';" class="bi bi-facebook"></i>
+                <i onclick="location.href = '<?php echo get_theme_mod('card_instagram_url') ?>';" class="bi bi-instagram"></i>
+                <i onclick="location.href = '<?php echo get_theme_mod('card_telegram_url') ?>';" class="bi bi-telegram"></i>
+                <i onclick="location.href = '<?php echo get_theme_mod('card_youtube_url') ?>';" class="bi bi-youtube"></i>
             </div>
             <div class='aboba'>
                 <a class='card__history'>
@@ -193,29 +193,17 @@
                     <div class='row'>
                         <div class='col-sm-12 col-lg-4 col-xl-4 col-xxl-3'>
                             <div class='links__wrapper'>
-                                <?php 
-                                    wp_nav_menu(array(
-                                        'theme-location'=>'links-menu',
-                                        'containter'=>false,
-                                        'walker'=> new Links_Walker_Menu,
+                                <?php
+                                wp_nav_menu(
+                                    array(
+                                        'theme-location' => 'links-menu',
+                                        'container' => false,
+                                        'walker' => new Links_Walker_Menu,
+                                        'items_wrap' => '%3$s'
                                     )
-                                    );
+                                );
                                 ?>
-                                <!-- <div data-href="sfs" data-title="RoboRace" class='links__item links__item_active'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum animi commodi dolore sit iusto est reiciendis minus in ut, necessitatibus doloremque magnam aliquam quae! Corporis illum voluptas incidunt facilis porro.
-                                </div>
-                                <div data-href="sefs" data-title="TowerLight Urcap" class='links__item'>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur quibusdam ea doloribus aperiam maxime vel officiis quidem, doloremque recusandae maiores. Cupiditate beatae doloremque voluptates sequi magnam? Facere reiciendis molestiae voluptate?
-                                </div>
-                                <div data-href="dgdg" data-title="WIKI" class='links__item'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In a vitae nemo nostrum beatae! Vero iste, iure et exercitationem asperiores ullam saepe cupiditate, ducimus repellat magni repudiandae. Quaerat, facilis suscipit.
-                                </div>
-                                <div data-href="hds" data-title="RAIPAP" class='links__item'>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, ipsam est nam, modi sunt id minus assumenda nobis aliquam iste cum nisi officia dolor minima quasi? Quos nostrum expedita a.
-                                </div>
-                                <div data-href="adafg" data-title="Публикации" class='links__item'>
-                                    Перечень научных публикаций лаборатории, тем дипломных проектов, магистерских диссертаций, участие в конференциях и семинарах.
-                                </div> -->
+
                             </div>
 
                         </div>

@@ -194,6 +194,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 class Links_Walker_Menu extends Walker_Nav_Menu{
+	function start_lvl(&$output, $depth=0, $args=null) { 
+		$output = '';
+	}
+	function end_lvl(&$output, $depth=0, $args=null) { 
+		$output = 'sfesfs';
+	}
 	function start_el(&$output, $item, $depth = 0, $args = array(), $current_object_id = 0)
 	{
 		$object = $item->object;
@@ -209,9 +215,9 @@ class Links_Walker_Menu extends Walker_Nav_Menu{
 			$class = 'links__item';
 		}
 
-		$output .= "<div data-title='". $title ."' data_href='". $permalink ."'class=". $class .">";
+		$output .= "<div data-title='". $title ."' data-href='". $permalink ."'class=". $class .">";
 
-		$output .= $description . $menu_order;
+		$output .= $description;
 
 		$output .= "</div>";
 	}
