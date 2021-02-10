@@ -158,7 +158,7 @@
                 </div>
             </div>
         </section>
-        <section class='excursion'>
+        <section id="excursion" class='excursion'>
             <div class='container'>
                 <h2 class='excursion__title'>Экскурсии</h2>
             </div>
