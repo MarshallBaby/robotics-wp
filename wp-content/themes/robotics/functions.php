@@ -193,4 +193,31 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+class Links_Walker_Menu extends Walker_Nav_Menu{
+	function start_el(&$output, $item, $depth = 0, $args = array(), $current_object_id = 0)
+	{
+		$object = $item->object;
+    	$type = $item->type;
+    	$title = $item->title;
+    	$description = $item->description;
+    	$permalink = $item->url;
+		$menu_order = $item->menu_order;
+
+		if($menu_order == 1){
+			$class = 'links__item links__item_active';
+		}else{
+			$class = 'links__item';
+		}
+
+		$output .= "<div data-title='". $title ."' data_href='". $permalink ."'class=". $class .">";
+
+		$output .= $description . $menu_order;
+
+		$output .= "</div>";
+	}
+}
+
+function fall_back_menu(){
+    return;
+}
 

@@ -190,17 +190,18 @@
                 <h2 class="links__title">Полезные ссылки</h2>
                 <div class="container">
 
-                <?php wp_nav_menu(array(
-            'theme_location'=> 'links-menu',
-            'container'=>'false',
-            'menu_class'=>'',
-            
-        )); ?>
-
                     <div class='row'>
                         <div class='col-sm-12 col-lg-4 col-xl-4 col-xxl-3'>
                             <div class='links__wrapper'>
-                                <div data-href="sfs" data-title="RoboRace" class='links__item links__item_active'>
+                                <?php 
+                                    wp_nav_menu(array(
+                                        'theme-location'=>'links-menu',
+                                        'containter'=>false,
+                                        'walker'=> new Links_Walker_Menu,
+                                    )
+                                    );
+                                ?>
+                                <!-- <div data-href="sfs" data-title="RoboRace" class='links__item links__item_active'>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum animi commodi dolore sit iusto est reiciendis minus in ut, necessitatibus doloremque magnam aliquam quae! Corporis illum voluptas incidunt facilis porro.
                                 </div>
                                 <div data-href="sefs" data-title="TowerLight Urcap" class='links__item'>
@@ -214,7 +215,7 @@
                                 </div>
                                 <div data-href="adafg" data-title="Публикации" class='links__item'>
                                     Перечень научных публикаций лаборатории, тем дипломных проектов, магистерских диссертаций, участие в конференциях и семинарах.
-                                </div>
+                                </div> -->
                             </div>
 
                         </div>
