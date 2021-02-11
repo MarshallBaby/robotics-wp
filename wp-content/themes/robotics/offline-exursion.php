@@ -1,9 +1,8 @@
 <?php
 /*
-Template Name: online-exursion
+Template Name: offline-exursion
 */
 get_header();
 ?>
-
 
 <?php get_footer(); ?>

@@ -23,7 +23,7 @@ get_header();
             </h2>
             <time class='article__time' datetime="<?php echo get_the_date('Y-m-d') ?>"> <?php echo get_the_date('d.m.Y'); ?> </time>
 				<?php the_content(); ?>
-         <a class='article__back' href='index.php'>Назад</a>
+         <a class='article__back' href='<?php echo home_url(); ?>'>Назад</a>
          <hr class='article__line'>
         </section>
 

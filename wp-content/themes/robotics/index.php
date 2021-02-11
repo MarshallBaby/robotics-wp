@@ -163,24 +163,32 @@
                 <h2 class='excursion__title'>Экскурсии</h2>
             </div>
             <div class='row justify-content-around'>
-                <div class=' flex-wrap d-flex justify-content-center col-sm-12 col-md-4 col-lg-4'>
-
-                    <div class='excursion__item' style="background-image: url(img/excursion/1.jpg);"> <span>Онлайн-экскурсия </span>
-                        <div class="excursion__dark"></div>
+                <?php
+                $args = array(
+                    'post_type' => 'page', //it is a Page right?
+                    'post_status' => 'publish',
+                    'meta_query' => array(
+                        array(
+                            'key' => '_wp_page_template',
+                            'value' => ['online-exursion.php', 'virtual-exursion.php', 'offline-exursion.php'], // template name as stored in the dB
+                            // 'value' => 'online-exursion.php', // template name as stored in the dB
+                        )
+                    )
+                );
+                $query = new WP_Query($args);
+                while ($query->have_posts()) {
+                    $query->the_post();
+                ?>
+                    <div onclick="location.href = '<?php the_permalink(); ?>';" class=' flex-wrap d-flex justify-content-center col-sm-12 col-md-4 col-lg-4'>
+                        <div class='excursion__item' style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
+                            <span>  <?php the_title(); ?> </span>
+                            <div class="excursion__dark"></div>
+                        </div>
                     </div>
-                </div>
-                <div class=' flex-wrap d-flex justify-content-center col-sm-12 col-md-4 col-lg-4'>
+                <?php
 
-                    <div class='excursion__item' style="background-image: url(img/excursion/2.jpg);"> <span>Оффлайн-экскурсия </span>
-                        <div class="excursion__dark"></div>
-                    </div>
-                </div>
-                <div class=' flex-wrap d-flex justify-content-center col-sm-12 col-md-4 col-lg-4'>
-
-                    <div class='excursion__item' style="background-image: url(img/excursion/3.jpg);"> <span>Виртуальная-экскурсия </span>
-                        <div class="excursion__dark"></div>
-                    </div>
-                </div>
+                }
+                ?>
             </div>
             <hr class='excursion__line'>
 
