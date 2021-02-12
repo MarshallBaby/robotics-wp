@@ -903,6 +903,7 @@ body {
     font-size: 14px;
     font-weight: 300;
     color: #2177A8;
+    cursor: pointer;
 }
 
 .article__time {

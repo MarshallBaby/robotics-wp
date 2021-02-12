@@ -51,7 +51,7 @@ get_header();
 
                 }
                 ?>
-            <a class='article__back align-self-start' href='<?php echo home_url(); ?>'>Назад</a>
+            <a class='article__back align-self-start' onclick="window.history.go(-1); return false;">Назад</a>
         </div>
     </div>
 

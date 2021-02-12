@@ -60,7 +60,7 @@ get_header();
                     the_content();
                 }
                 ?>
-        <a class='article__back align-self-start ml-3' href="<?php echo home_url(); ?>">Назад</a>
+        <a class='article__back align-self-start ml-3' onclick="window.history.go(-1); return false;">Назад</a>
     </div>
 
 </section>
