@@ -45,6 +45,9 @@ function linksFunc(params) {
         let linksItem = document.getElementsByClassName('links__item');
         for (let i = 0; i < linksItem.length; i++) {
             linksItem[i].style.display = "flex";
+            linksItem[i].addEventListener('click', () => {
+                location.href = "" + linksItem[i].getAttribute('data-href');
+            });
         }
         document.getElementsByClassName('links__item')[0].classList.add('links__item_active');
     }
