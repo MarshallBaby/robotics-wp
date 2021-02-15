@@ -5,7 +5,7 @@ Template Name: members
 get_header();
 ?>
 
-<section class='members '>
+<section class='members foot-fix'>
     <div class='container'>
         <h2 class='members__title'> <?php the_title(); ?></h2>
         <div class='members__wrapper'>

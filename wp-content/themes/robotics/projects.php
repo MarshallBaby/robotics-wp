@@ -4,7 +4,7 @@ Template Name: projects
 */
 get_header();
 ?>
-<section class='projects'>
+<section class='projects foot-fix'>
     <div class='container'>
         <h2 class='projects__title'>Проекты</h2>
         <div class='row'>

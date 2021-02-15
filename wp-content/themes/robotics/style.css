@@ -953,3 +953,8 @@ body {
     bottom: 0px;
     left: 0px;
 }
+
+.foot-fix{
+    min-height: 100vh;
+}
+

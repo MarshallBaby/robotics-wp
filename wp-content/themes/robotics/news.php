@@ -5,7 +5,7 @@ Template Name: news
 get_header();
 ?>
 
-<section class='news'>
+<section class='news foot-fix'>
     <div class='container'>
         <h2 class='news__title'>Новости</h2>
     </div>

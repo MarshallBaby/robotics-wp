@@ -6,7 +6,7 @@ get_header();
 get_post();
 ?>
 
-<section class='all-partners'>
+<section class='all-partners foot-fix'>
     <div class='container'>
         <h2 class='all-partners__title'> <?php the_title(); ?> </h2>
         <div class='partners__descr'> <?php echo get_theme_mod('parnters_descr'); ?> </div>

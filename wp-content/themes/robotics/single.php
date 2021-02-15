@@ -10,7 +10,7 @@
 get_header();
 ?>
 	<div style="height: 15px;"></div>
-    <div class='container'>
+    <div class='container foot-fix'>
 	<?php 
 		while(have_posts()){
 			if(have_posts()){

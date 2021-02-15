@@ -57,10 +57,10 @@ function linksFunc(params) {
 function ready() {
     linksFunc();
     let initWidth = screen.width;
-    if ($("body").height() < $(window).height()) {
-        $("body").css('min-heigth', '100vh');
-        $(".footer")[0].classList.add('footer_ext');
-    }
+    // if ($("body").height() < $(window).height()) {
+    //     $("body").css('min-heigth', '100vh');
+    //     $(".footer")[0].classList.add('footer_ext');
+    // }
     document.getElementById("mobile-menu-button").addEventListener('click', mobileMenuSwitcher);
     document.getElementById("mobile-menu-button-exit").addEventListener('click', mobileMenuSwitcher);
 
@@ -72,7 +72,6 @@ function ready() {
     window.addEventListener('resize', function (event) {
         fullWidther(document.querySelectorAll(".news__all-news")[0], 1296);
         if (Math.abs(screen.width - initWidth) > 100) {
-            console.log('pizza');
             location.reload();
         }
     });

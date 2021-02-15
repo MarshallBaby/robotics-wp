@@ -5,7 +5,7 @@ Template Name: about
 get_header();
 ?>
 
-<section class='excursion'>
+<section class='excursion foot-fix'>
     <div class='container'>
         <h2 class='excursion__title'>О нас</h2>
         <div class='row justify-content-start'>
