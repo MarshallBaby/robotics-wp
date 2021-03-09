@@ -56,6 +56,7 @@ function linksFunc(params) {
 
 function ready() {
     linksFunc();
+
     let initWidth = screen.width;
     // if ($("body").height() < $(window).height()) {
     //     $("body").css('min-heigth', '100vh');
@@ -86,6 +87,9 @@ function ready() {
         links[i].innerHTML = links[i].getAttribute('data-title');
     }
 
+    $(".links__subtitle")[0].innerHTML = linksData[0].title;
+    $(".links__desrc")[0].innerHTML = linksData[0].descr;
+    $(".links__href")[0].setAttribute("href", linksData[0].href);
 
 }
 

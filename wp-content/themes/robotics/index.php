@@ -215,7 +215,7 @@
                             </div>
 
                         </div>
-                        <div class='offset-lg-1 col-lg-7 offset-xl-0 col-xl-6 col-xxl-6 d-none d-lg-flex'>
+                        <div class='offset-lg-1 col-lg-7 offset-xl-0 col-xl-8 col-xxl-8 d-none d-lg-flex'>
                             <div class="links__info">
                                 <div class='links__subtitle'>RoboRace</div>
                                 <div class='links__desrc'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</div>

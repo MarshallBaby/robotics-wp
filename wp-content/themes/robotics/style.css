@@ -948,6 +948,10 @@ body {
     margin-top: auto;
 }
 
+footer a{
+    color: #FCFCFC;
+}
+
 .footer_ext {
     position: absolute;
     bottom: 0px;
