@@ -16,6 +16,8 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="icon" href="<?php echo get_theme_mod( 'customfavicon_url' ) ?>">
+    <link rel="shortcut icon" href="<?php echo get_theme_mod( 'customfavicon_url' ) ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <style>
@@ -48,6 +50,7 @@
     <i id="mobile-menu-button-exit" class="bi bi-x"></i>
     </div>
     <div class="row">
+    
     <?php wp_nav_menu(array(
             'theme_location'=> 'header-menu',
             'container'=>'false',

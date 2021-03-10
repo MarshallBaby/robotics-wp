@@ -150,6 +150,16 @@ function robotics_customize_register($wp_customize)
 		"settings" => 'customlogo_url',
 		
 	)));
+	$wp_customize->add_setting('customfavicon_url', array(
+		'default' => '',
+		'transport' => 'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'customfavicon_url', array(
+		"label" => "Логотип во вкладке",
+		"section" => "customlogo",
+		"settings" => 'customfavicon_url',
+		
+	)));
 }
 add_action('customize_register', 'robotics_customize_register');
 
