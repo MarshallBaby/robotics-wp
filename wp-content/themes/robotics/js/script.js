@@ -55,6 +55,9 @@ function linksFunc(params) {
 }
 
 function ready() {
+    document.getElementsByTagName('body')[0].style.overflowY = 'unset';
+    document.getElementsByClassName('loader')[0].style.visibility = 'hidden';
+    document.getElementsByClassName('loader')[0].style.opacity = '0';
 
     linksFunc();
 

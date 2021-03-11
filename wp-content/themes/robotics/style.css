@@ -965,3 +965,26 @@ footer a{
     min-height: 100vh;
 }
 
+.loader{
+    z-index: 999;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.2s all ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader img{
+    width: 45px;
+    height: 45px;
+    opacity: 0.7;
+}
+
+body{
+    overflow-y: hidden;
+}
