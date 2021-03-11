@@ -150,6 +150,7 @@ body {
     font-weight: 300;
     user-select: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .card__media {
@@ -858,6 +859,8 @@ body {
     }
     .card__button:hover {
         background-color: #F0F0F0;
+        color: #3F3F3F;
+        
     }
     .card__media i {
         font-size: 20px;

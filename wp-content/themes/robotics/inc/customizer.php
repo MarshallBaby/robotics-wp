@@ -39,6 +39,28 @@ function robotics_customize_register($wp_customize)
 		"type"=>"text"
 	)));
 
+	$wp_customize->add_setting('card_button_url', array(
+		'default' => '#',
+		'transport' => 'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'card_button_url', array(
+		"label" => "Кнопка URL",
+		"section" => "titlecard",
+		"settings" => 'card_button_url',
+		"type"=>"text"
+	)));
+
+	$wp_customize->add_setting('history_button_url', array(
+		'default' => '#',
+		'transport' => 'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'history_button_url', array(
+		"label" => "История URL",
+		"section" => "titlecard",
+		"settings" => 'history_button_url',
+		"type"=>"text"
+	)));
+
 	$wp_customize->add_setting('card_facebook_url', array(
 		'default' => '#',
 		'transport' => 'postMessage'

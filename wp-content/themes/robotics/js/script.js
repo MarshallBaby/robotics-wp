@@ -55,6 +55,7 @@ function linksFunc(params) {
 }
 
 function ready() {
+
     linksFunc();
 
     let initWidth = screen.width;

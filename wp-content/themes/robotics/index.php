@@ -12,10 +12,10 @@
                 <?php echo get_bloginfo('description'); ?>
             </div>
             <div class='card__wrapper'>
-                <div class='card__button'>
+                <a style="text-decoration: none;" href="<?php echo get_theme_mod('card_button_url') ?>" class='card__button'>
                     <?php echo get_theme_mod('card_button_text'); ?>
-                </div>
-                <a class='card__history card__history_hidden'>
+                </a>
+                <a href="<?php echo get_theme_mod('history_button_url') ?>" class='card__history card__history_hidden'>
                     История <i class="bi bi-chevron-right"></i>
                 </a>
             </div>
