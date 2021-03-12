@@ -55,9 +55,21 @@ function linksFunc(params) {
 }
 
 function ready() {
-    document.getElementsByTagName('body')[0].style.overflowY = 'unset';
-    document.getElementsByClassName('loader')[0].style.visibility = 'hidden';
-    document.getElementsByClassName('loader')[0].style.opacity = '0';
+    //LOADER
+        document.getElementsByTagName('body')[0].style.overflowY = 'unset';
+        document.getElementsByClassName('loader')[0].style.visibility = 'hidden';
+        document.getElementsByClassName('loader')[0].style.opacity = '0';
+    //END LOADER
+
+    //MEDIA LINKS HIDE
+    for(let i = 0; i < document.getElementsByClassName('card__mediaicon').length; i++){
+        let link = document.getElementsByClassName('card__mediaicon')[i].getAttribute("data-href");
+        console.log(link);
+        if(link != ""){
+            document.getElementsByClassName('card__mediaicon')[i].style.display = "block";  
+        }
+    }
+    //END MEDIA LINK HIDE
 
     linksFunc();
 

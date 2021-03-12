@@ -24,13 +24,13 @@
             </div>
 
             <div class="card__media">
-                <i onclick="location.href = '<?php echo get_theme_mod('card_facebook_url') ?>';" class="bi bi-facebook"></i>
-                <i onclick="location.href = '<?php echo get_theme_mod('card_instagram_url') ?>';" class="bi bi-instagram"></i>
-                <i onclick="location.href = '<?php echo get_theme_mod('card_telegram_url') ?>';" class="bi bi-telegram"></i>
-                <i onclick="location.href = '<?php echo get_theme_mod('card_youtube_url') ?>';" class="bi bi-youtube"></i>
+                <i data-href='<?php echo get_theme_mod('card_facebook_url') ?>' onclick="location.href = '<?php echo get_theme_mod('card_facebook_url') ?>';" class="card__mediaicon bi bi-facebook"></i>
+                <i data-href='<?php echo get_theme_mod('card_instagram_url') ?>' onclick="location.href = '<?php echo get_theme_mod('card_instagram_url') ?>';" class="card__mediaicon bi bi-instagram"></i>
+                <i data-href='<?php echo get_theme_mod('card_telegram_url') ?>' onclick="location.href = '<?php echo get_theme_mod('card_telegram_url') ?>';" class="card__mediaicon bi bi-telegram"></i>
+                <i data-href='<?php echo get_theme_mod('card_youtube_url') ?>' onclick="location.href = '<?php echo get_theme_mod('card_youtube_url') ?>';" class="card__mediaicon bi bi-youtube"></i>
             </div>
             <div class='aboba'>
-                <a class='card__history'>
+                <a href="<?php echo get_theme_mod('history_button_url') ?>" class='card__history'>
                     История <i class="bi bi-chevron-right"></i>
                 </a>
             </div>

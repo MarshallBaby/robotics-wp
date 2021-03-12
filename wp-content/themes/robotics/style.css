@@ -159,6 +159,7 @@ body {
 }
 
 .card__media i {
+    display: none;
     cursor: pointer;
     padding-right: 7px;
 }
