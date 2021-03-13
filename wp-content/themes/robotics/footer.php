@@ -5,7 +5,8 @@
 </span>
 <span><br></span>
 <span>
-Разработка: <a href="https://github.com/MarshallBaby">Алексей Яцевич </a>, <a href="https://github.com/VladsonX">Владислав Новицкий </a>, Кирилл Максимчик <br> и др.
+Разработка: <a href="https://github.com/MarshallBaby">Алексей Яцевич </a>, <a href="https://github.com/VladsonX">Владислав Новицкий </a>, 
+<a href="https://github.com/Flut9"> Кирилл Максимчик </a> <br> <a href="<?php echo get_theme_mod('footer_more_url'); ?>"> и др. </a>
 </span>
 </footer>
 <?php wp_footer(); ?>

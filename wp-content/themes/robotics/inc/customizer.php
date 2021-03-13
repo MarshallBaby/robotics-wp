@@ -122,6 +122,22 @@ function robotics_customize_register($wp_customize)
 		"type" => 'textarea',
 	)));
 
+	$wp_customize->add_section('footer', array(
+		'title' => 'Футер',
+		'priority' => 20
+	));
+
+	$wp_customize->add_setting('footer_more_url', array(
+		'default' => '',
+		'transport' => 'postMessage'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'footer_more_url', array(
+		"label" => "И др URL",
+		"section" => "footer",
+		"settings" => 'footer_more_url',
+		"type" => 'textarea',
+	)));
+
 	$wp_customize->add_setting('projects_more_background', array(
 		'default' => '',
 		'transport' => 'postMessage'
